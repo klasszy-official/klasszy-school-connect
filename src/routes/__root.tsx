@@ -29,14 +29,14 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Klasszy — Simple School & Parent Communication App" },
+      { name: "description", content: "Klasszy helps schools in India send homework, updates and messages to parents instantly. Easy setup, friendly support, affordable plans." },
+      { name: "author", content: "Klasszy" },
+      { property: "og:title", content: "Klasszy — School Communication Made Simple" },
+      { property: "og:description", content: "Send homework, notices and updates to parents in seconds. Built for schools in India." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Klasszy — School Communication Made Simple" },
     ],
     links: [
       {
