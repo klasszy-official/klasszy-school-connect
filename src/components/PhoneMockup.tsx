@@ -3,6 +3,7 @@ import { BookOpen, Bell, CalendarDays, MessageCircle } from "lucide-react";
 export function PhoneMockup() {
   return (
     <div className="relative mx-auto w-[260px] sm:w-[280px]">
+            
       <div className="relative rounded-[2.5rem] border-[10px] border-foreground/90 bg-foreground/90 shadow-[var(--shadow-phone)]">
         <div className="absolute left-1/2 top-2 z-10 h-5 w-24 -translate-x-1/2 rounded-full bg-foreground/90" />
         <div className="overflow-hidden rounded-[1.8rem] bg-[image:var(--gradient-hero)] p-4 pt-8">
