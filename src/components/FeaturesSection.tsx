@@ -1,44 +1,43 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import {
-  BookOpen,
-  Bell,
-  MessageCircle,
-  CalendarDays,
-  CalendarHeart,
-  Users,
-} from "lucide-react";
+import { Clock, Settings, Users, BarChart3 } from "lucide-react";
 
 const features = [
   {
-    icon: BookOpen,
-    title: "Homework Sharing",
-    desc: "Share daily homework with photos and notes — instantly.",
+    title: "Save Time",
+    desc: "Automate administrative tasks and focus on what matters: education.",
+    icon: Clock,
+    accent: "text-blue-600",
+    iconBg: "bg-blue-50",
+    border: "hover:border-blue-200",
+    glow: "hover:shadow-blue-50",
   },
   {
-    icon: MessageCircle,
-    title: "Messages & Announcements",
-    desc: "Reach the whole school or a single class in one tap.",
+    title: "One-Stop Solution",
+    desc: "Manage enrollment, attendance, and communication in a single portal.",
+    icon: Settings,
+    accent: "text-violet-600",
+    iconBg: "bg-violet-50",
+    border: "hover:border-violet-200",
+    glow: "hover:shadow-violet-50",
   },
   {
-    icon: CalendarDays,
-    title: "Timetable",
-    desc: "Class schedules always at parents' fingertips.",
-  },
-  {
-    icon: CalendarHeart,
-    title: "Events",
-    desc: "Sports day, PTM, holidays — everyone stays in the loop.",
-  },
-  {
-    icon: Bell,
-    title: "Parent Notifications",
-    desc: "Push alerts that parents actually see and read.",
-  },
-  {
+    title: "Enhance Workflow",
+    desc: "Real-time collaboration between teachers, students, and parents.",
     icon: Users,
-    title: "Class-wise Groups",
-    desc: "Auto-organised groups by class and section.",
+    accent: "text-emerald-600",
+    iconBg: "bg-emerald-50",
+    border: "hover:border-emerald-200",
+    glow: "hover:shadow-emerald-50",
+  },
+  {
+    title: "Grow Revenue",
+    desc: "Optimized fee collection and financial tracking for school growth.",
+    icon: BarChart3,
+    accent: "text-orange-600",
+    iconBg: "bg-orange-50",
+    border: "hover:border-orange-200",
+    glow: "hover:shadow-orange-50",
   },
 ];
 
@@ -47,26 +46,33 @@ export function FeaturesSection() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="features" className="bg-neutral-50 px-6 py-24 lg:px-10 lg:py-32" ref={ref}>
-      <div className="mx-auto max-w-[1400px]">
+    <section
+      id="features"
+      className="bg-white px-6 py-24 lg:px-10 lg:py-32"
+      ref={ref}
+    >
+      <div className="mx-auto max-w-7xl">
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-16 text-center"
+          className="mb-20 text-center"
         >
-          <span className="inline-block rounded-full bg-black px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white">
-            Features
+          <span className="inline-block rounded-full border border-blue-200 bg-blue-50 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-blue-700">
+            Why Klasszy
           </span>
-          <h2 className="mt-6 text-3xl font-bold tracking-tight text-black sm:text-4xl lg:text-5xl">
-            Everything your school needs
+          <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+            How our platform helps you succeed
           </h2>
-          <p className="mx-auto mt-4 max-w-lg text-base text-neutral-500">
-            Designed to be so simple, anyone can use it from day one.
+          <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-slate-500">
+            Everything you need to manage your school efficiently in a single
+            dashboard.
           </p>
         </motion.div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Cards grid */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((f, i) => {
             const Icon = f.icon;
             return (
@@ -76,20 +82,21 @@ export function FeaturesSection() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{
                   duration: 0.6,
-                  delay: i * 0.08,
+                  delay: i * 0.1,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                whileHover={{
-                  y: -6,
-                  boxShadow: "0 20px 40px -15px rgba(0,0,0,0.1)",
-                }}
-                className="group cursor-default rounded-2xl bg-white p-8 shadow-[0_1px_3px_rgba(0,0,0,0.04)] transition-colors"
+                whileHover={{ y: -6, boxShadow: "0 24px 48px -12px rgba(0,0,0,0.06)" }}
+                className={`group cursor-default rounded-3xl border border-slate-100 bg-white p-8 transition-all duration-300 ${f.border} ${f.glow} hover:shadow-xl`}
               >
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-neutral-100 text-neutral-500 transition-all duration-300 group-hover:bg-black group-hover:text-white">
-                  <Icon className="h-5 w-5" />
-                </span>
-                <h3 className="mt-5 text-lg font-bold text-black">{f.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-neutral-500">
+                <div
+                  className={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl ${f.iconBg} transition-transform duration-300 group-hover:scale-110`}
+                >
+                  <Icon className={`h-6 w-6 ${f.accent}`} />
+                </div>
+                <h3 className="mb-3 text-lg font-extrabold text-slate-900">
+                  {f.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-slate-500">
                   {f.desc}
                 </p>
               </motion.div>

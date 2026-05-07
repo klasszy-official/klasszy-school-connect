@@ -15,11 +15,11 @@ export function ManagementSection() {
         <div className="absolute bottom-20 right-1/3 w-36 h-36 bg-purple-50 rounded-full blur-3xl opacity-30"></div>
       </div>
 
-      {/* Content positioned 10% from top */}
-      <div className="relative z-10 flex flex-col items-center justify-start pt-[10vh] px-6 w-full max-w-4xl mx-auto">
-        
-        {/* Section Header - Centered */}
-        <div className="text-center mb-8">
+      {/* Content positioned from top */}
+      <div className="relative z-10 flex flex-col items-center justify-start pt-[10vh] w-full">
+
+        {/* Section Header - Centered in a container */}
+        <div className="text-center mb-12 px-6 max-w-4xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -38,9 +38,9 @@ export function ManagementSection() {
           </motion.p>
         </div>
 
-        {/* Services Grid - Edge to Edge with Infinite Scroll */}
-        <div className="w-full">
-          <div className="scroll-container">
+        {/* Services Grid - Full Width Infinite Scroll */}
+        <div className="w-full overflow-hidden">
+          <div className="scroll-container w-full">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}

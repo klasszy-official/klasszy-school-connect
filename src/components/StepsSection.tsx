@@ -6,85 +6,34 @@ const steps = [
     num: 1,
     title: "DISCOVER",
     desc: "We understand your school's unique needs, class structure, and communication goals.",
+    color: "bg-blue-600",
+    light: "bg-blue-50",
+    text: "text-blue-600",
+    border: "border-blue-200",
   },
   {
     num: 2,
     title: "SETUP",
-    desc: "Our team configures your classes, teachers and parents — ready in just 1-2 days.",
+    desc: "Our team configures your classes, teachers and parents — ready in just 1–2 days.",
+    color: "bg-violet-600",
+    light: "bg-violet-50",
+    text: "text-violet-600",
+    border: "border-violet-200",
   },
   {
     num: 3,
     title: "LAUNCH",
     desc: "Quick training for staff, app access for parents, and you're live — effortlessly.",
+    color: "bg-emerald-600",
+    light: "bg-emerald-50",
+    text: "text-emerald-600",
+    border: "border-emerald-200",
   },
 ];
 
-function StepCircle({ step, isActive }: { step: typeof steps[0]; isActive: boolean }) {
-  const circumference = 2 * Math.PI * 120;
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="flex flex-col items-center"
-    >
-      <div className="relative flex h-64 w-64 items-center justify-center sm:h-72 sm:w-72">
-        {/* Outer ring */}
-        <svg className="absolute inset-0" viewBox="0 0 260 260">
-          <circle
-            cx="130"
-            cy="130"
-            r="120"
-            fill="none"
-            stroke="rgba(255,255,255,0.1)"
-            strokeWidth="2"
-          />
-          <motion.circle
-            cx="130"
-            cy="130"
-            r="120"
-            fill="none"
-            stroke="#d4f542"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeDasharray={circumference}
-            initial={{ strokeDashoffset: circumference }}
-            animate={{ strokeDashoffset: isActive ? circumference * 0.65 : circumference }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-            transform="rotate(-90 130 130)"
-          />
-        </svg>
-
-        {/* Center content */}
-        <div className="text-center">
-          <motion.h3
-            key={step.num}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-2xl font-bold text-white sm:text-3xl"
-          >
-            {step.num}. {step.title}
-          </motion.h3>
-          <motion.p
-            key={`desc-${step.num}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="mt-3 max-w-[200px] text-sm leading-relaxed text-neutral-400"
-          >
-            {step.desc}
-          </motion.p>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
-
 export function StepsSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
   const [activeStep, setActiveStep] = useState(0);
 
   useEffect(() => {
@@ -96,47 +45,97 @@ export function StepsSection() {
   }, [isInView]);
 
   return (
-    <section id="how" className="bg-black px-6 py-24 lg:px-10 lg:py-32" ref={ref}>
-      <div className="mx-auto max-w-[1400px]">
-        <motion.h2
+    <section id="how" className="bg-slate-50 px-6 py-24 lg:px-10 lg:py-32" ref={ref}>
+      <div className="mx-auto max-w-7xl">
+        {/* Heading */}
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="text-4xl font-bold uppercase tracking-tight text-white sm:text-5xl lg:text-6xl"
+          className="mb-20 text-center"
         >
-          OUR STEPS
-        </motion.h2>
+          <span className="inline-block rounded-full border border-blue-200 bg-blue-50 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-blue-700">
+            How it Works
+          </span>
+          <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+            Up and running in 3 simple steps
+          </h2>
+          <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-slate-500">
+            From first contact to daily use — we're with you every step of the
+            way.
+          </p>
+        </motion.div>
 
-        <div className="mt-16 flex flex-col items-center justify-center lg:mt-20">
-          <StepCircle step={steps[activeStep]} isActive={isInView} />
+        {/* Steps grid */}
+        <div className="grid gap-6 sm:grid-cols-3">
+          {steps.map((step, i) => (
+            <motion.div
+              key={step.num}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{
+                duration: 0.6,
+                delay: i * 0.12,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              onClick={() => setActiveStep(i)}
+              className={`group cursor-pointer rounded-3xl border bg-white p-8 transition-all duration-300 ${
+                activeStep === i
+                  ? `border-2 ${step.border} shadow-xl`
+                  : "border-slate-100 hover:shadow-md"
+              }`}
+            >
+              {/* Step number */}
+              <div
+                className={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl text-2xl font-extrabold text-white ${step.color}`}
+              >
+                {step.num}
+              </div>
 
-          {/* Step indicators */}
-          <div className="mt-10 flex gap-3">
-            {steps.map((s, i) => (
-              <button
-                key={s.num}
-                onClick={() => setActiveStep(i)}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
-                  i === activeStep
-                    ? "w-10 bg-[#d4f542]"
-                    : "w-2.5 bg-neutral-700 hover:bg-neutral-500"
+              <h3 className="mb-3 text-xl font-extrabold text-slate-900">
+                {step.title}
+              </h3>
+              <p className="text-sm leading-relaxed text-slate-500">
+                {step.desc}
+              </p>
+
+              {/* Active indicator */}
+              <div
+                className={`mt-6 h-1 rounded-full transition-all duration-500 ${
+                  activeStep === i ? `${step.color} w-full` : "bg-slate-100 w-8"
                 }`}
               />
-            ))}
-          </div>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ delay: 0.5, duration: 0.7 }}
-            className="mt-16 max-w-md text-center text-sm leading-relaxed text-neutral-500"
-          >
-            From first setup to daily use, we're with you at every step.{" "}
-            <a href="#contact" className="text-neutral-300 underline transition-colors hover:text-white">
-              Contact us for details
-            </a>
-          </motion.p>
+            </motion.div>
+          ))}
         </div>
+
+        {/* Progress dots */}
+        <div className="mt-10 flex justify-center gap-2">
+          {steps.map((s, i) => (
+            <button
+              key={s.num}
+              onClick={() => setActiveStep(i)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                i === activeStep ? "w-8 bg-blue-600" : "w-2 bg-slate-300 hover:bg-slate-400"
+              }`}
+            />
+          ))}
+        </div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ delay: 0.5, duration: 0.7 }}
+          className="mt-8 text-center text-sm leading-relaxed text-slate-400"
+        >
+          From first setup to daily use, we're with you at every step.{" "}
+          <a
+            href="#contact"
+            className="font-semibold text-blue-600 underline underline-offset-2 transition-colors hover:text-blue-700"
+          >
+            Contact us for details
+          </a>
+        </motion.p>
       </div>
     </section>
   );

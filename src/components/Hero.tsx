@@ -1,83 +1,300 @@
 import { motion } from "framer-motion";
-import { GraduationCap, MessageCircle, Bell, Users, ShoppingCart, FileText, BookOpen, CalendarDays, CalendarHeart } from "lucide-react";
-import RhythmicRipplesBackground from "@/components/ui/rhythmic-ripples-background";
-import { AnimatedText } from "@/components/ui/animated-shiny-text";
+import { GraduationCap, ArrowRight, PlayCircle } from "lucide-react";
+import { DEMO_URL } from "@/components/CtaButtons";
+
+const partners = [
+  "Saraswati Public",
+  "Sunrise English",
+  "Little Stars Academy",
+  "Bright Minds School",
+  "Green Valley Kids",
+];
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
-      {/* Subtle background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-purple-100 rounded-full blur-3xl opacity-30"></div>
-        <div className="absolute top-40 right-20 w-48 h-48 bg-indigo-100 rounded-full blur-3xl opacity-20"></div>
-        <div className="absolute bottom-32 left-1/4 w-40 h-40 bg-blue-100 rounded-full blur-3xl opacity-25"></div>
-        <div className="absolute bottom-20 right-1/3 w-36 h-36 bg-purple-50 rounded-full blur-3xl opacity-30"></div>
+    <header className="relative min-h-screen overflow-hidden bg-gradient-to-b from-blue-50/60 via-white to-white pt-20">
+      {/* Decorative blobs */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <motion.div
+          animate={{ scale: [1, 1.15, 1], x: [0, 30, 0], y: [0, 20, 0] }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-20 left-10 h-80 w-80 rounded-full bg-blue-200/40 blur-3xl"
+        />
+        <motion.div
+          animate={{ scale: [1, 1.2, 1], x: [0, -30, 0], y: [0, 40, 0] }}
+          transition={{ duration: 22, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+          className="absolute top-60 right-20 h-64 w-64 rounded-full bg-violet-200/30 blur-3xl"
+        />
+        <motion.div
+          animate={{ scale: [1, 1.1, 1], y: [0, -20, 0] }}
+          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute bottom-40 left-1/4 h-56 w-56 rounded-full bg-indigo-100/40 blur-3xl"
+        />
       </div>
 
-      {/* Content positioned in center */}
-      <div className="relative z-10 flex flex-col items-center justify-center px-6 w-full max-w-4xl mx-auto">
-        
-        {/* Main heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 30, scale: 0.95 }}
-          animate={{ 
-            opacity: 1, 
-            y: [0, -12, 0],
-            scale: 1,
-            rotate: [0, 1.5, -1.5, 0]
-          }}
-          transition={{ 
-            duration: 0.8, 
-            ease: [0.22, 1, 0.36, 1],
-            y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-            rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-          }}
-          className="mb-8"
-        >
-          <div className="relative inline-block">
-            {/* Box-like background structure */}
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl blur-xl opacity-50"></div>
-            <div className="absolute inset-0 bg-white rounded-3xl shadow-2xl border-4 border-gray-200"></div>
-            
-            {/* Inner content */}
-            <div className="relative z-10 p-12 md:p-16 lg:p-20">
-              <AnimatedText 
-                text="KLASSZY"
-                gradientColors="linear-gradient(90deg, #000, #666, #000)"
-                gradientAnimationDuration={3}
-                hoverEffect={true}
-                textClassName="font-black uppercase leading-[0.85] tracking-[0.08em] text-[3.5rem] sm:text-[5rem] md:text-[5.7rem] lg:text-[7.1rem] xl:text-[8.5rem]"
-              />
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
+        {/* Hero Grid */}
+        <div className="grid min-h-[calc(100vh-5rem)] items-center gap-16 lg:grid-cols-2">
+          {/* Left — copy */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            className="space-y-8 py-16 lg:py-0"
+          >
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-1.5"
+            >
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-600">
+                <GraduationCap className="h-3 w-3 text-white" />
+              </span>
+              <span className="text-xs font-bold uppercase tracking-widest text-blue-700">
+                School Management Platform
+              </span>
+            </motion.div>
+
+            {/* Headline */}
+            <h1 className="text-5xl font-extrabold leading-[1.1] tracking-tight text-slate-900 lg:text-6xl xl:text-7xl">
+              Streamline Your{" "}
+              <span className="relative">
+                <span className="relative z-10 bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+                  School Operations
+                </span>
+                <span className="absolute -bottom-1 left-0 h-3 w-full rounded-full bg-blue-100/80 -z-0" />
+              </span>
+            </h1>
+
+            <p className="max-w-lg text-lg leading-relaxed text-slate-500">
+              The all-in-one platform designed to help schools manage
+              workflows, engage parents, and grow — seamlessly and
+              effortlessly.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap items-center gap-4">
+              <motion.a
+                href={DEMO_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(37,99,235,0.25)" }}
+                whileTap={{ scale: 0.97 }}
+                className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-8 py-4 text-lg font-bold text-white shadow-xl shadow-blue-100 transition-all group"
+              >
+                Get Free Demo
+                <ArrowRight
+                  size={20}
+                  className="transition-transform group-hover:translate-x-1"
+                />
+              </motion.a>
+              <motion.a
+                href="#features"
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-8 py-4 text-lg font-bold text-slate-700 shadow-sm hover:bg-slate-50 transition-all"
+              >
+                <PlayCircle size={20} className="text-blue-600" />
+                See How it Works
+              </motion.a>
             </div>
-          </div>
-        </motion.div>
 
-        {/* Subtitle with icon */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="flex items-center gap-3 text-center"
-        >
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-black text-white">
-            <GraduationCap className="h-4 w-4" />
-          </span>
-          <span className="text-sm font-medium text-neutral-700">
-            Connecting Schools & Parents Seamlessly
-          </span>
-        </motion.div>
+            {/* Social proof */}
+            <div className="flex items-center gap-4 border-t border-slate-100 pt-6">
+              <div className="flex -space-x-2">
+                {[11, 12, 13, 14].map((i) => (
+                  <div
+                    key={i}
+                    className="h-9 w-9 overflow-hidden rounded-full border-2 border-white bg-slate-200 shadow"
+                  >
+                    <img
+                      src={`https://i.pravatar.cc/100?img=${i}`}
+                      className="h-full w-full rounded-full object-cover"
+                      alt="School user"
+                    />
+                  </div>
+                ))}
+              </div>
+              <p className="text-sm font-medium text-slate-500">
+                Trusted by{" "}
+                <span className="font-extrabold text-slate-900">1,800+</span>{" "}
+                schools across India
+              </p>
+            </div>
+          </motion.div>
 
-        {/* Optional additional text for larger screens */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="hidden text-center text-sm leading-relaxed text-neutral-600 mt-6 md:block"
-        >
-          <p>One App, One School</p>
-          <p>Every Update Reaching Parents</p>
-        </motion.div>
+          {/* Right — visual */}
+          <motion.div
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+            className="relative hidden lg:block"
+          >
+            {/* Dashboard Mockup */}
+            <div className="relative z-10 rounded-3xl border border-slate-100 bg-white p-5 shadow-[0_32px_80px_-20px_rgba(0,0,0,0.12)]">
+              {/* Browser chrome */}
+              <div className="mb-4 flex items-center gap-1.5 px-2">
+                <div className="h-2.5 w-2.5 rounded-full bg-rose-400" />
+                <div className="h-2.5 w-2.5 rounded-full bg-amber-400" />
+                <div className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
+                <div className="ml-4 h-5 flex-1 rounded-full bg-slate-100 px-3 flex items-center">
+                  <div className="h-1.5 w-24 rounded-full bg-slate-200" />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-4 gap-4">
+                {/* Sidebar */}
+                <div className="col-span-1 space-y-3">
+                  <div className="flex h-8 items-center gap-2 rounded-xl bg-blue-600 px-3">
+                    <div className="h-2 w-2 rounded-full bg-white/80" />
+                    <div className="h-1.5 w-12 rounded-full bg-white/60" />
+                  </div>
+                  {["bg-blue-50", "bg-slate-50", "bg-slate-50", "bg-slate-50"].map(
+                    (bg, i) => (
+                      <div
+                        key={i}
+                        className={`flex h-8 items-center gap-2 rounded-xl ${bg} px-3`}
+                      >
+                        <div className="h-2 w-2 rounded-full bg-slate-300" />
+                        <div className="h-1.5 w-10 rounded-full bg-slate-200" />
+                      </div>
+                    )
+                  )}
+                </div>
+
+                {/* Main */}
+                <div className="col-span-3 space-y-4">
+                  {/* Summary cards */}
+                  <div className="grid grid-cols-3 gap-3">
+                    {[
+                      { bg: "bg-blue-50", border: "border-blue-100", label: "Students", val: "1,284" },
+                      { bg: "bg-violet-50", border: "border-violet-100", label: "Teachers", val: "48" },
+                      { bg: "bg-emerald-50", border: "border-emerald-100", label: "Parents", val: "2,100" },
+                    ].map((c) => (
+                      <div
+                        key={c.label}
+                        className={`rounded-xl border ${c.border} ${c.bg} p-3`}
+                      >
+                        <p className="text-[9px] font-semibold text-slate-500 uppercase tracking-wider">
+                          {c.label}
+                        </p>
+                        <p className="mt-1 text-sm font-extrabold text-slate-800">
+                          {c.val}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Chart */}
+                  <div className="flex h-32 items-end gap-1.5 rounded-2xl bg-slate-50 px-4 pb-4 pt-6">
+                    {[40, 65, 50, 75, 55, 90, 70, 85].map((h, i) => (
+                      <div
+                        key={i}
+                        className="flex-1 rounded-t-md"
+                        style={{
+                          height: `${h}%`,
+                          background:
+                            i === 5
+                              ? "rgb(37,99,235)"
+                              : "rgba(37,99,235,0.15)",
+                        }}
+                      />
+                    ))}
+                  </div>
+
+                  {/* Stat row */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="rounded-xl bg-orange-50 border border-orange-100 p-3">
+                      <p className="text-[9px] font-semibold uppercase tracking-wider text-orange-400">
+                        Attendance
+                      </p>
+                      <p className="mt-1 text-sm font-extrabold text-slate-800">
+                        94.2%
+                      </p>
+                    </div>
+                    <div className="rounded-xl bg-rose-50 border border-rose-100 p-3">
+                      <p className="text-[9px] font-semibold uppercase tracking-wider text-rose-400">
+                        Fee Collected
+                      </p>
+                      <p className="mt-1 text-sm font-extrabold text-slate-800">
+                        ₹ 3.4L
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating notification card */}
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -bottom-8 -left-10 z-20 w-52 rounded-2xl border border-slate-100 bg-white p-4 shadow-2xl"
+            >
+              <div className="flex items-center gap-3">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-100">
+                  <GraduationCap size={16} className="text-blue-600" />
+                </div>
+                <div>
+                  <p className="text-[10px] font-bold text-slate-800">
+                    Parent App
+                  </p>
+                  <p className="text-[9px] text-slate-400">2,100 active users</p>
+                </div>
+              </div>
+              <div className="mt-3 space-y-1.5">
+                <div className="h-1.5 w-full rounded-full bg-slate-100" />
+                <div className="h-1.5 w-3/4 rounded-full bg-slate-100" />
+                <div className="mt-2 h-12 rounded-xl bg-gradient-to-br from-blue-50 to-violet-50" />
+              </div>
+            </motion.div>
+
+            {/* Floating stat chip */}
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              className="absolute -right-6 top-10 z-20 rounded-2xl border border-slate-100 bg-white px-4 py-3 shadow-xl"
+            >
+              <p className="text-[9px] font-semibold uppercase tracking-wider text-slate-400">
+                Onboarded today
+              </p>
+              <p className="mt-0.5 text-base font-extrabold text-blue-600">
+                +14 schools
+              </p>
+            </motion.div>
+
+            {/* Glow */}
+            <div className="absolute -right-10 -top-10 -z-10 h-64 w-64 rounded-full bg-blue-400/15 blur-3xl" />
+            <div className="absolute bottom-20 left-1/3 -z-10 h-48 w-48 rounded-full bg-violet-400/15 blur-3xl" />
+          </motion.div>
+        </div>
       </div>
-    </section>
+
+      {/* Partners bar */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.8 }}
+        className="relative z-10 border-y border-slate-100 py-10"
+      >
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <p className="mb-6 text-center text-xs font-bold uppercase tracking-widest text-slate-400">
+            Trusted by schools across India
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-8 opacity-50 grayscale transition-all duration-500 hover:opacity-80 hover:grayscale-0 md:justify-between md:gap-12">
+            {partners.map((name) => (
+              <span
+                key={name}
+                className="text-base font-extrabold tracking-tight text-slate-700"
+              >
+                {name}
+              </span>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+    </header>
   );
 }
