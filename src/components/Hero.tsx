@@ -79,15 +79,6 @@ export function Hero() {
                   className="transition-transform group-hover:translate-x-1"
                 />
               </motion.a>
-              <motion.a
-                href="#features"
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-8 py-4 text-lg font-bold text-slate-700 shadow-sm hover:bg-slate-50 transition-all"
-              >
-                <PlayCircle size={20} className="text-blue-600" />
-                See How it Works
-              </motion.a>
             </div>
 
             {/* Social proof removed */}
@@ -219,7 +210,7 @@ export function Hero() {
                       Your School Name
                     </p>
                     <div className="flex gap-0.5 mt-0.5">
-                      {[1,2,3,4,5].map(i => <Star key={i} className="w-2.5 h-2.5 text-amber-400" fill="currentColor" />)}
+                      {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-2.5 h-2.5 text-amber-400" fill="currentColor" />)}
                     </div>
                   </div>
                 </div>

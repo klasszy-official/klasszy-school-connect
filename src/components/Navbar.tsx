@@ -7,7 +7,6 @@ import { DEMO_URL } from "./CtaButtons";
 const links = [
   { href: "#features", label: "Why Us" },
   { href: "#solutions", label: "Solutions", hasDropdown: true },
-  { href: "#how", label: "How it Works" },
   { href: "#pricing", label: "Pricing" },
 ];
 
@@ -26,23 +25,21 @@ export function Navbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed top-0 z-50 w-full transition-all duration-700 ${
-        scrolled
+      className={`fixed top-0 z-50 w-full transition-all duration-700 ${scrolled
           ? "pt-4 px-4 sm:px-10"
           : "pt-0 px-0"
-      }`}
-    >
-      <div 
-        className={`mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10 transition-all duration-500 ${
-          scrolled 
-            ? "rounded-3xl bg-white/80 shadow-[0_8px_32px_rgba(0,0,0,0.08)] backdrop-blur-2xl border border-white/20 h-16" 
-            : "bg-transparent h-24"
         }`}
+    >
+      <div
+        className={`mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10 transition-all duration-500 ${scrolled
+            ? "rounded-3xl bg-white/80 shadow-[0_8px_32px_rgba(0,0,0,0.08)] backdrop-blur-2xl border border-white/20 h-16"
+            : "bg-transparent h-24"
+          }`}
       >
         {/* Logo */}
         <Link to="/" className="group flex items-center gap-1.5 transition-transform hover:scale-[1.02]">
           <div className="relative flex h-10 w-10 items-center justify-center translate-y-0.5">
-            <motion.span 
+            <motion.span
               whileHover={{ rotate: [-10, 10, 0] }}
               className="text-[2.6rem] font-black bg-gradient-to-br from-blue-800 via-blue-600 to-indigo-500 bg-clip-text text-transparent font-sans"
             >
@@ -60,45 +57,45 @@ export function Navbar() {
           </div>
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden items-center gap-10 md:flex">
-          {links.map((l, i) => (
-            <motion.a
-              key={l.href}
-              href={l.href}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 + i * 0.1, duration: 0.5 }}
-              whileHover={{ y: -2 }}
-              className="group relative flex items-center gap-1.5 text-sm font-bold text-slate-600 transition-colors duration-300 hover:text-blue-600"
-            >
-              {l.label}
-              {l.hasDropdown && (
-                <ChevronDown size={14} className="opacity-40 group-hover:rotate-180 transition-transform" />
-              )}
-              <span className="absolute -bottom-1.5 left-0 h-[2px] w-0 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 transition-all duration-300 group-hover:w-full" />
-            </motion.a>
-          ))}
-        </nav>
+        {/* Right Side: Nav & CTA */}
+        <div className="hidden md:flex items-center gap-8">
+          {/* Desktop Nav */}
+          <nav className="flex items-center gap-8">
+            {links.map((l, i) => (
+              <motion.a
+                key={l.href}
+                href={l.href}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 + i * 0.1, duration: 0.5 }}
+                whileHover={{ y: -2 }}
+                className="group relative flex items-center gap-1.5 text-sm font-bold text-slate-600 transition-colors duration-300 hover:text-blue-600"
+              >
+                {l.label}
+                {l.hasDropdown && (
+                  <ChevronDown size={14} className="opacity-40 group-hover:rotate-180 transition-transform" />
+                )}
+                <span className="absolute -bottom-1.5 left-0 h-[2px] w-0 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 transition-all duration-300 group-hover:w-full" />
+              </motion.a>
+            ))}
+          </nav>
 
-        {/* CTA */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-          className="hidden items-center gap-4 md:flex"
-        >
-          <motion.a
-            href={DEMO_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05, y: -2, boxShadow: "0 10px 25px rgba(37,99,235,0.2)" }}
-            whileTap={{ scale: 0.98 }}
-            className="inline-flex h-11 items-center justify-center rounded-2xl bg-slate-900 px-7 text-sm font-black text-white transition-all hover:bg-slate-800"
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
           >
-            Get Free Demo
-          </motion.a>
-        </motion.div>
+            <motion.a
+              href="#"
+              whileHover={{ scale: 1.05, y: -2, boxShadow: "0 10px 25px rgba(37,99,235,0.4)" }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex h-11 items-center justify-center rounded-2xl bg-blue-600 px-7 text-sm font-black text-white transition-all hover:bg-blue-500 shadow-md shadow-blue-500/30"
+            >
+              Login
+            </motion.a>
+          </motion.div>
+        </div>
 
         {/* Mobile toggle */}
         <button
@@ -133,15 +130,13 @@ export function Navbar() {
                   {l.label}
                 </motion.a>
               ))}
-              <div className="mt-2 p-2">
+              <div className="mt-2 p-2 flex flex-col gap-3">
                 <a
-                  href={DEMO_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#"
                   onClick={() => setOpen(false)}
-                  className="inline-flex w-full items-center justify-center rounded-2xl bg-blue-600 py-4 text-base font-black text-white shadow-lg shadow-blue-100"
+                  className="inline-flex w-full items-center justify-center rounded-2xl bg-blue-600 py-4 text-base font-black text-white shadow-lg shadow-blue-500/30"
                 >
-                  Get Free Demo
+                  Login
                 </a>
               </div>
             </div>

@@ -4,13 +4,13 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { AppScreenshotsSection } from "@/components/AppScreenshotsSection";
 import { SolutionsSection } from "@/components/SolutionsSection";
-import { StepsSection } from "@/components/StepsSection";
+import { WhiteLabelSection } from "@/components/WhiteLabelSection";
 import { PricingSection } from "@/components/PricingSection";
 import { Footer } from "@/components/Footer";
 import { WHATSAPP_URL } from "@/components/CtaButtons";
 import { motion } from "framer-motion";
 
-export const Route = createFileRoute("/")(  {
+export const Route = createFileRoute("/")({
   component: Index,
 });
 
@@ -19,9 +19,9 @@ function Index() {
     <div className="min-h-screen bg-white text-slate-900 antialiased">
       <Navbar />
       <Hero />
-      <AppScreenshotsSection />
+      <WhiteLabelSection />
       <SolutionsSection />
-      <StepsSection />
+      <AppScreenshotsSection />
       <PricingSection />
 
       <Footer />
