@@ -1,14 +1,8 @@
 import { motion } from "framer-motion";
-import { GraduationCap, ArrowRight, PlayCircle } from "lucide-react";
+import { GraduationCap, ArrowRight, PlayCircle, Star } from "lucide-react";
 import { DEMO_URL } from "@/components/CtaButtons";
 
-const partners = [
-  "Saraswati Public",
-  "Sunrise English",
-  "Little Stars Academy",
-  "Bright Minds School",
-  "Green Valley Kids",
-];
+
 
 export function Hero() {
   return (
@@ -42,36 +36,31 @@ export function Hero() {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="space-y-8 py-16 lg:py-0"
           >
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-1.5"
-            >
-              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-600">
-                <GraduationCap className="h-3 w-3 text-white" />
-              </span>
-              <span className="text-xs font-bold uppercase tracking-widest text-blue-700">
-                School Management Platform
-              </span>
-            </motion.div>
+
 
             {/* Headline */}
-            <h1 className="text-5xl font-extrabold leading-[1.1] tracking-tight text-slate-900 lg:text-6xl xl:text-7xl">
-              Streamline Your{" "}
-              <span className="relative">
-                <span className="relative z-10 bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
-                  School Operations
-                </span>
-                <span className="absolute -bottom-1 left-0 h-3 w-full rounded-full bg-blue-100/80 -z-0" />
+            <div className="space-y-4">
+              <span className="block text-2xl font-extrabold tracking-tight text-blue-900 md:text-3xl">
+                ONE APP. INDIVIDUAL LOGIN.
               </span>
-            </h1>
+              <h1 className="text-5xl font-black leading-[1.1] tracking-tight text-slate-900 lg:text-6xl xl:text-7xl uppercase">
+                COMPLETE{" "}
+                <span className="relative">
+                  <span className="relative z-10 bg-gradient-to-r from-blue-700 to-indigo-600 bg-clip-text text-transparent">
+                    SCHOOL
+                  </span>
+                  <span className="absolute -bottom-1 left-0 h-3 w-full rounded-full bg-blue-100/80 -z-0" />
+                </span>{" "}
+                SOLUTION
+              </h1>
+            </div>
 
-            <p className="max-w-lg text-lg leading-relaxed text-slate-500">
-              The all-in-one platform designed to help schools manage
-              workflows, engage parents, and grow — seamlessly and
-              effortlessly.
+            <p className="max-w-xl text-lg font-bold leading-relaxed text-blue-900">
+              SMARTER ADMIN. BETTER LEARNING. STRONGER SCHOOLS.
+            </p>
+            <p className="max-w-lg text-lg leading-relaxed text-slate-500 font-medium">
+              Klasszy is an all-in-one School ERP that simplifies administration,
+              enhances communication, and empowers every stakeholder.
             </p>
 
             {/* CTAs */}
@@ -101,28 +90,7 @@ export function Hero() {
               </motion.a>
             </div>
 
-            {/* Social proof */}
-            <div className="flex items-center gap-4 border-t border-slate-100 pt-6">
-              <div className="flex -space-x-2">
-                {[11, 12, 13, 14].map((i) => (
-                  <div
-                    key={i}
-                    className="h-9 w-9 overflow-hidden rounded-full border-2 border-white bg-slate-200 shadow"
-                  >
-                    <img
-                      src={`https://i.pravatar.cc/100?img=${i}`}
-                      className="h-full w-full rounded-full object-cover"
-                      alt="School user"
-                    />
-                  </div>
-                ))}
-              </div>
-              <p className="text-sm font-medium text-slate-500">
-                Trusted by{" "}
-                <span className="font-extrabold text-slate-900">1,800+</span>{" "}
-                schools across India
-              </p>
-            </div>
+            {/* Social proof removed */}
           </motion.div>
 
           {/* Right — visual */}
@@ -231,23 +199,33 @@ export function Hero() {
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-8 -left-10 z-20 w-52 rounded-2xl border border-slate-100 bg-white p-4 shadow-2xl"
+              className="absolute -bottom-12 -left-16 z-20 w-64 rounded-2xl border border-slate-100 bg-white p-5 shadow-2xl"
             >
-              <div className="flex items-center gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-100">
-                  <GraduationCap size={16} className="text-blue-600" />
-                </div>
-                <div>
-                  <p className="text-[10px] font-bold text-slate-800">
-                    Parent App
-                  </p>
-                  <p className="text-[9px] text-slate-400">2,100 active users</p>
-                </div>
+              <div className="flex flex-col text-center">
+                <p className="text-xs font-bold uppercase tracking-wider text-blue-900">
+                  Your School. Your Identity.
+                </p>
+                <p className="text-2xl font-black text-indigo-600 mt-1 uppercase">
+                  Your App.
+                </p>
               </div>
-              <div className="mt-3 space-y-1.5">
-                <div className="h-1.5 w-full rounded-full bg-slate-100" />
-                <div className="h-1.5 w-3/4 rounded-full bg-slate-100" />
-                <div className="mt-2 h-12 rounded-xl bg-gradient-to-br from-blue-50 to-violet-50" />
+              <div className="mt-4 flex items-center justify-between rounded-xl bg-blue-50/50 p-2 border border-blue-100/50">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white shadow-sm border border-slate-100">
+                    <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Logo</span>
+                  </div>
+                  <div>
+                    <p className="text-[11px] font-bold text-slate-800">
+                      Your School Name
+                    </p>
+                    <div className="flex gap-0.5 mt-0.5">
+                      {[1,2,3,4,5].map(i => <Star key={i} className="w-2.5 h-2.5 text-amber-400" fill="currentColor" />)}
+                    </div>
+                  </div>
+                </div>
+                <button className="cursor-default rounded-md bg-slate-900 px-3 py-1 text-[10px] font-bold text-white uppercase tracking-wider hover:bg-slate-800 transition-colors">
+                  Install
+                </button>
               </div>
             </motion.div>
 
@@ -272,29 +250,7 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Partners bar */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 0.8 }}
-        className="relative z-10 border-y border-slate-100 py-10"
-      >
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <p className="mb-6 text-center text-xs font-bold uppercase tracking-widest text-slate-400">
-            Trusted by schools across India
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 opacity-50 grayscale transition-all duration-500 hover:opacity-80 hover:grayscale-0 md:justify-between md:gap-12">
-            {partners.map((name) => (
-              <span
-                key={name}
-                className="text-base font-extrabold tracking-tight text-slate-700"
-              >
-                {name}
-              </span>
-            ))}
-          </div>
-        </div>
-      </motion.div>
+
     </header>
   );
 }

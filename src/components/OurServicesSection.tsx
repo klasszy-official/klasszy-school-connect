@@ -109,23 +109,37 @@ export function OurServicesSection() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 py-6 pt-2">
       {/* Section Header */}
-      <div className="relative z-10 text-center mb-4">
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-gray-900 mb-4"
-        >
-          Management
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-base text-gray-600 max-w-2xl mx-auto px-4 mb-2"
-        >
-          Comprehensive tools to streamline your school operations and enhance productivity
-        </motion.p>
+      <div className="mx-auto max-w-7xl px-6 lg:px-10 mb-16 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-start sm:items-end">
+          <div className="flex flex-col items-start translate-y-3">
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-block rounded-full border border-blue-200 bg-blue-50 px-4 py-1.5 text-[0.65rem] font-bold uppercase tracking-widest text-blue-700 mb-6"
+            >
+              EVERYTHING YOU NEED. ALL IN ONE PLACE.
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-5xl md:text-8xl font-black tracking-tighter text-slate-900 leading-[0.85] uppercase"
+            >
+              OUR<br />SERVICES
+            </motion.h2>
+          </div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-col sm:items-end"
+          >
+            <p className="text-xl font-bold leading-tight text-slate-600 sm:text-right max-w-sm border-l-4 sm:border-l-0 sm:border-r-4 border-blue-500 pl-4 sm:pl-0 sm:pr-6 py-2">
+              Klasszy is designed to digitize and stream every operation of educational institution effortlessly.
+            </p>
+          </motion.div>
+        </div>
       </div>
 
       {/* Auto-scrolling Services Container */}
@@ -144,25 +158,36 @@ export function OurServicesSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ 
                 scale: 1.05, 
-                y: -5,
-                transition: { duration: 0.2 }
+                rotateZ: 2,
+                y: -10,
+                transition: { type: "spring", stiffness: 400, damping: 10 }
               }}
-              className="flex-shrink-0 w-80 bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl p-6 text-white shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer"
+              className="flex-shrink-0 w-80 bg-gradient-to-br from-blue-700 via-indigo-800 to-slate-900 rounded-[2rem] p-8 text-white shadow-2xl hover:shadow-blue-900/40 transition-all duration-300 cursor-pointer group relative overflow-hidden"
             >
+              {/* Animated Glow Background on Hover */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
               {/* Icon Container */}
-              <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4">
-                <service.icon className="w-8 h-8 text-white" />
+              <div className="relative z-10 w-16 h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 border border-white/20 group-hover:bg-white group-hover:text-blue-900 transition-all duration-300">
+                <service.icon className="w-8 h-8 text-white group-hover:text-blue-900 transition-colors duration-300 transform group-hover:scale-110" />
               </div>
 
               {/* Service Content */}
-              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-              <p className="text-white/90 text-sm leading-relaxed">
+              <h3 className="relative z-10 text-2xl font-black mb-4 tracking-tight group-hover:translate-x-1 transition-transform">{service.title}</h3>
+              <p className="relative z-10 text-blue-100/80 text-sm leading-relaxed font-medium group-hover:text-white transition-colors">
                 {service.desc}
               </p>
 
               {/* Decorative Elements */}
-              <div className="absolute top-4 right-4 w-8 h-8 bg-white/10 rounded-full backdrop-blur-sm"></div>
-              <div className="absolute bottom-4 right-8 w-4 h-4 bg-white/10 rounded-full backdrop-blur-sm"></div>
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-400/20 transition-all" />
+              <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-indigo-500/10 rounded-full blur-2xl group-hover:bg-indigo-500/20 transition-all" />
+              
+              {/* Arrow Indicator that appears on hover */}
+              <div className="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 transition-all duration-300">
+                <div className="h-8 w-8 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
+                  <TrendingUp className="w-4 h-4 text-white" />
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>

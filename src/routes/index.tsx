@@ -2,11 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MessageCircle } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
-import { FeaturesSection } from "@/components/FeaturesSection";
+import { AppScreenshotsSection } from "@/components/AppScreenshotsSection";
 import { SolutionsSection } from "@/components/SolutionsSection";
 import { StepsSection } from "@/components/StepsSection";
 import { PricingSection } from "@/components/PricingSection";
-import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { Footer } from "@/components/Footer";
 import { WHATSAPP_URL } from "@/components/CtaButtons";
 import { motion } from "framer-motion";
@@ -20,11 +19,11 @@ function Index() {
     <div className="min-h-screen bg-white text-slate-900 antialiased">
       <Navbar />
       <Hero />
-      <FeaturesSection />
+      <AppScreenshotsSection />
       <SolutionsSection />
       <StepsSection />
       <PricingSection />
-      <TestimonialsSection />
+
       <Footer />
 
       {/* Floating WhatsApp */}

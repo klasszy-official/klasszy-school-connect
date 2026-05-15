@@ -29,16 +29,14 @@ export function AboutSection() {
           <div>
             <FadeInWhenVisible>
               <h2 className="text-3xl font-bold uppercase leading-tight tracking-tight text-black sm:text-4xl lg:text-5xl">
-                Driving Growth Through
+                About
                 <br />
-                Unified Communication
+                <span className="text-blue-600">Klasszy</span>
               </h2>
             </FadeInWhenVisible>
             <FadeInWhenVisible delay={0.1}>
               <p className="mt-6 max-w-lg text-base leading-relaxed text-neutral-500">
-                At Klasszy, we combine smart technology with simple design to
-                connect schools and parents — making communication effortless,
-                instant, and reliable.
+                Klasszy is a next-generation School ERP designed to digitize and streamline every operation of educational institutions. From student management to communication, from academics to analytics – we bring everything together in one powerful, easy-to-use app.
               </p>
             </FadeInWhenVisible>
           </div>
@@ -104,24 +102,24 @@ export function AboutSection() {
 
           {/* Philosophy cards */}
           <FadeInWhenVisible delay={0.3}>
-            <div className="rounded-2xl bg-white p-8 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
-              <Sparkles className="h-6 w-6 text-neutral-400" />
+            <div className="rounded-2xl bg-white p-8 shadow-[0_1px_3px_rgba(0,0,0,0.04)] sm:col-span-2">
+              <Sparkles className="h-6 w-6 text-blue-500" />
               <h3 className="mt-4 text-lg font-bold uppercase tracking-tight text-black">
-                Philosophy
+                OUR MISSION
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-neutral-500">
-                We believe in communication that's both beautiful and effective
+                To empower schools with smart technology that drives efficiency, transparency, and better outcomes.
               </p>
             </div>
           </FadeInWhenVisible>
           <FadeInWhenVisible delay={0.4}>
-            <div className="rounded-2xl bg-white p-8 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
-              <HeartHandshake className="h-6 w-6 text-neutral-400" />
+            <div className="rounded-2xl bg-white p-8 shadow-[0_1px_3px_rgba(0,0,0,0.04)] sm:col-span-2">
+              <HeartHandshake className="h-6 w-6 text-blue-500" />
               <h3 className="mt-4 text-lg font-bold uppercase tracking-tight text-black">
-                Approach
+                OUR PROMISE
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-neutral-500">
-                We partner closely with you to design, setup, and optimize your school's communication
+                All features. One App. One Price. Bringing your school identity to the forefront with your own app.
               </p>
             </div>
           </FadeInWhenVisible>

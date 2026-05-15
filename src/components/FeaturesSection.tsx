@@ -4,35 +4,35 @@ import { Clock, Settings, Users, BarChart3 } from "lucide-react";
 
 const features = [
   {
-    title: "Save Time",
-    desc: "Automate administrative tasks and focus on what matters: education.",
-    icon: Clock,
+    title: "A Complete ERP",
+    desc: "More than a Diary – A Complete School ERP for everything you need.",
+    icon: Settings,
     accent: "text-blue-600",
     iconBg: "bg-blue-50",
     border: "hover:border-blue-200",
     glow: "hover:shadow-blue-50",
   },
   {
-    title: "One-Stop Solution",
-    desc: "Manage enrollment, attendance, and communication in a single portal.",
-    icon: Settings,
+    title: "Secure & Reliable",
+    desc: "Easy to use, secure, and accessible anytime, anywhere.",
+    icon: Users,
     accent: "text-violet-600",
     iconBg: "bg-violet-50",
     border: "hover:border-violet-200",
     glow: "hover:shadow-violet-50",
   },
   {
-    title: "Enhance Workflow",
-    desc: "Real-time collaboration between teachers, students, and parents.",
-    icon: Users,
+    title: "Saves Time",
+    desc: "Automates processes to save time and drastically reduce workload.",
+    icon: Clock,
     accent: "text-emerald-600",
     iconBg: "bg-emerald-50",
     border: "hover:border-emerald-200",
     glow: "hover:shadow-emerald-50",
   },
   {
-    title: "Grow Revenue",
-    desc: "Optimized fee collection and financial tracking for school growth.",
+    title: "Improves Outcomes",
+    desc: "Improves communication & transparency, supporting better learning outcomes.",
     icon: BarChart3,
     accent: "text-orange-600",
     iconBg: "bg-orange-50",
@@ -60,10 +60,10 @@ export function FeaturesSection() {
           className="mb-20 text-center"
         >
           <span className="inline-block rounded-full border border-blue-200 bg-blue-50 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-blue-700">
-            Why Klasszy
+            Why Klasszy?
           </span>
           <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
-            How our platform helps you succeed
+            More than a Diary
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-slate-500">
             Everything you need to manage your school efficiently in a single

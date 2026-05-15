@@ -1,7 +1,7 @@
 import { Calendar, MessageCircle } from "lucide-react";
 
-const WHATSAPP_URL = "https://wa.me/919999999999?text=Hi%20Klasszy%2C%20I%27d%20like%20to%20know%20more%20about%20your%20school%20app";
-const DEMO_URL = "https://wa.me/919999999999?text=Hi%20Klasszy%2C%20I%27d%20like%20to%20book%20a%20free%20demo";
+const WHATSAPP_URL = "https://wa.me/917200675522?text=Hi%20Klasszy%2C%20I%27d%20like%20to%20know%20more%20about%20your%20school%20app";
+const DEMO_URL = "https://wa.me/917200675522?text=Hi%20Klasszy%2C%20I%27d%20like%20to%20book%20a%20free%20demo";
 
 export function CtaButtons({ size = "lg" }: { size?: "lg" | "md" }) {
   const padding = size === "lg" ? "px-7 py-4 text-base" : "px-5 py-3 text-sm";
