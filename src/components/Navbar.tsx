@@ -87,7 +87,9 @@ export function Navbar() {
             transition={{ delay: 0.5, duration: 0.5 }}
           >
             <motion.a
-              href="#"
+              href="https://app.klasszy.in"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -2, boxShadow: "0 10px 25px rgba(37,99,235,0.4)" }}
               whileTap={{ scale: 0.98 }}
               className="inline-flex h-11 items-center justify-center rounded-2xl bg-blue-600 px-7 text-sm font-black text-white transition-all hover:bg-blue-500 shadow-md shadow-blue-500/30"
@@ -132,7 +134,9 @@ export function Navbar() {
               ))}
               <div className="mt-2 p-2 flex flex-col gap-3">
                 <a
-                  href="#"
+                  href="https://app.klasszy.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
                   className="inline-flex w-full items-center justify-center rounded-2xl bg-blue-600 py-4 text-base font-black text-white shadow-lg shadow-blue-500/30"
                 >
