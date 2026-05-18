@@ -41,7 +41,7 @@ export function Hero() {
             {/* Headline */}
             <div className="space-y-4">
               <span className="block text-2xl font-extrabold tracking-tight text-blue-900 md:text-3xl">
-                {/* ONE APP. INDIVIDUAL LOGIN. */}
+                ONE APP. INDIVIDUAL LOGIN.
               </span>
               <h1 className="text-5xl font-black leading-[1.1] tracking-tight text-slate-900 lg:text-6xl xl:text-7xl uppercase">
                 COMPLETE{" "}
