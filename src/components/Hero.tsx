@@ -234,19 +234,6 @@ export function Hero() {
               </p>
             </motion.div>
 
-            {/* Floating 3D School Mobile Image */}
-            <motion.div
-              animate={{ y: [0, -15, 0], rotate: [-1, 2, -1] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="absolute -top-32 -left-32 z-30 w-[26rem] pointer-events-none"
-            >
-              <img 
-                src="/ChatGPT_Image_May_15__2026__11_36_57_AM-removebg-preview.png" 
-                alt="School Mobile App 3D" 
-                className="w-full h-auto object-contain drop-shadow-[0_30px_40px_rgba(37,99,235,0.2)]" 
-              />
-            </motion.div>
-
             {/* Glow */}
             <div className="absolute -right-10 -top-10 -z-10 h-64 w-64 rounded-full bg-blue-400/15 blur-3xl" />
             <div className="absolute bottom-20 left-1/3 -z-10 h-48 w-48 rounded-full bg-violet-400/15 blur-3xl" />
