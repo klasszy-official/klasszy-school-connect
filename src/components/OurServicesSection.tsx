@@ -164,26 +164,26 @@ export function OurServicesSection() {
               }}
               className="flex-shrink-0 w-80 bg-gradient-to-br from-blue-700 via-indigo-800 to-slate-900 rounded-[2rem] p-8 text-white shadow-2xl hover:shadow-blue-900/40 transition-all duration-300 cursor-pointer group relative overflow-hidden"
             >
-              {/* Animated Glow Background on Hover */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              {/* Icon Container */}
-              <div className="relative z-10 w-16 h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 border border-white/20 group-hover:bg-white group-hover:text-blue-900 transition-all duration-300">
-                <service.icon className="w-8 h-8 text-white group-hover:text-blue-900 transition-colors duration-300 transform group-hover:scale-110" />
+              {/* Animated Glow Background - Always visible on mobile, on hover on desktop */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue-400/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500" />
+
+              {/* Icon Container - Always white on mobile, on hover on desktop */}
+              <div className="relative z-10 w-16 h-16 bg-white backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 border border-white/20 text-blue-900 md:bg-white/10 md:text-white md:group-hover:bg-white md:group-hover:text-blue-900 transition-all duration-300">
+                <service.icon className="w-8 h-8 text-blue-900 md:text-white md:group-hover:text-blue-900 transition-colors duration-300 transform scale-110 md:scale-100 md:group-hover:scale-110" />
               </div>
 
               {/* Service Content */}
-              <h3 className="relative z-10 text-2xl font-black mb-4 tracking-tight group-hover:translate-x-1 transition-transform">{service.title}</h3>
-              <p className="relative z-10 text-blue-100/80 text-sm leading-relaxed font-medium group-hover:text-white transition-colors">
+              <h3 className="relative z-10 text-2xl font-black mb-4 tracking-tight translate-x-1 md:translate-x-0 md:group-hover:translate-x-1 transition-transform">{service.title}</h3>
+              <p className="relative z-10 text-white text-sm leading-relaxed font-medium md:text-blue-100/80 md:group-hover:text-white transition-colors">
                 {service.desc}
               </p>
 
-              {/* Decorative Elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-400/20 transition-all" />
-              <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-indigo-500/10 rounded-full blur-2xl group-hover:bg-indigo-500/20 transition-all" />
-              
-              {/* Arrow Indicator that appears on hover */}
-              <div className="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 transition-all duration-300">
+              {/* Decorative Elements - Always brighter on mobile, on hover on desktop */}
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-blue-400/20 rounded-full blur-2xl md:bg-blue-400/10 md:group-hover:bg-blue-400/20 transition-all" />
+              <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-indigo-500/20 rounded-full blur-2xl md:bg-indigo-500/10 md:group-hover:bg-indigo-500/20 transition-all" />
+
+              {/* Arrow Indicator - Always visible on mobile, on hover on desktop */}
+              <div className="absolute bottom-8 right-8 opacity-100 translate-x-0 md:opacity-0 md:translate-x-4 md:group-hover:opacity-100 md:group-hover:translate-x-0 transition-all duration-300">
                 <div className="h-8 w-8 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
                   <TrendingUp className="w-4 h-4 text-white" />
                 </div>
